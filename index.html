@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>コミクスアカデミー｜利益を、人への投資へ。法人向けAI学習サービス</title>
+<meta name="description" content="月額5,000円〜／1名から始められる、法人向け生成AI・業務スキル学習サービス。御社専用カリキュラム1,100講座＋AI専門家ハンズオンで、生産性と社員満足度を同時に高める。">
+<link rel="preload" as="image" type="image/avif" href="./images/comix-academy/hero.avif" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700;900&family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0B1F3A;
+  --ink-2:#142C4F;
+  --gold:#C8A063;
+  --gold-2:#E0BE82;
+  --green:#1F3A2E;
+  --green-2:#2E5444;
+  --paper:#F8F5EE;
+  --paper-2:#EFEAE0;
+  --line:#D9D2C2;
+  --cta:#C8102E;
+  --cta-2:#A30D26;
+  --muted:#6B6457;
+  --white:#FFFFFF;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.7;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+.container{max-width:1180px;margin:0 auto;padding:0 24px}
+.serif{font-family:"Noto Serif JP",serif}
+.acc-gold{color:var(--gold)}
+.acc-green{color:var(--green)}
+
+/* ===== Sticky Header ===== */
+.sticky-header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(11,31,58,.96);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(200,160,99,.25);
+}
+.sticky-header .container{
+  display:flex;align-items:center;justify-content:space-between;
+  height:64px;
+}
+.brand{
+  display:flex;align-items:center;gap:10px;
+  color:var(--paper);font-weight:700;
+  font-family:"Noto Serif JP",serif;letter-spacing:.04em;
+}
+.brand-mark{
+  width:32px;height:32px;border:1.5px solid var(--gold);
+  display:grid;place-items:center;font-size:14px;color:var(--gold);
+  font-family:"Cormorant Garamond",serif;font-weight:700;letter-spacing:0;
+}
+.brand-name{font-size:15px}
+.brand-name small{display:block;font-size:10px;color:var(--gold-2);font-weight:500;letter-spacing:.15em}
+.mini-cta{
+  background:var(--cta);color:#fff;
+  padding:10px 18px;font-size:13px;font-weight:700;
+  border-radius:2px;letter-spacing:.04em;
+  transition:.2s;
+}
+.mini-cta:hover{background:var(--cta-2);transform:translateY(-1px)}
+@media(max-width:640px){
+  .mini-cta{padding:9px 12px;font-size:12px}
+  .brand-name small{display:none}
+}
+
+/* ===== Hero ===== */
+.hero{
+  position:relative;
+  min-height:100vh;
+  padding:140px 0 80px;
+  color:var(--paper);
+  overflow:hidden;
+  isolation:isolate;
+}
+.hero-bg{
+  position:absolute;inset:0;z-index:-2;
+  background-image:url('./images/comix-academy/hero.png');
+  background-image:image-set(
+    url('./images/comix-academy/hero.avif') type('image/avif'),
+    url('./images/comix-academy/hero.webp') type('image/webp'),
+    url('./images/comix-academy/hero.png')  type('image/png')
+  );
+  background-size:cover;background-position:center;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(115deg,rgba(11,31,58,.92) 0%,rgba(11,31,58,.78) 55%,rgba(11,31,58,.55) 100%);
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:8px 16px;border:1px solid var(--gold);
+  color:var(--gold-2);font-size:12px;font-weight:700;
+  letter-spacing:.2em;margin-bottom:32px;
+}
+.hero-eyebrow::before{content:"";width:24px;height:1px;background:var(--gold)}
+.hero h1{
+  font-family:"Noto Serif JP",serif;font-weight:900;
+  font-size:clamp(36px,5.5vw,72px);
+  line-height:1.2;
+  letter-spacing:.01em;
+  margin-bottom:28px;
+}
+.hero h1 .accent{color:var(--gold)}
+.hero h1 .line{display:block}
+.hero-lead{
+  font-size:clamp(15px,1.4vw,19px);
+  line-height:1.9;max-width:640px;
+  color:#E8E2D2;margin-bottom:48px;
+}
+
+/* Spotlight stat */
+.spotlight{
+  display:grid;grid-template-columns:auto 1fr;gap:32px;
+  padding:28px 32px;margin-bottom:36px;
+  border:1px solid rgba(200,160,99,.4);
+  background:rgba(11,31,58,.5);
+  max-width:720px;align-items:center;
+}
+.spotlight-main{display:flex;align-items:baseline;gap:6px}
+.spotlight-num{
+  font-family:"Cormorant Garamond",serif;font-weight:700;
+  font-size:clamp(54px,7vw,92px);line-height:1;color:var(--gold);
+}
+.spotlight-unit{font-size:18px;color:var(--paper);font-weight:700}
+.spotlight-body{display:flex;flex-direction:column;gap:6px}
+.spotlight-label{font-size:13px;color:var(--gold-2);font-weight:700;letter-spacing:.15em}
+.spotlight-source{font-size:11px;color:#B5AE99;letter-spacing:.05em}
+.substats{
+  display:flex;gap:24px;flex-wrap:wrap;margin-bottom:48px;
+  color:#D9D2C2;font-size:14px;
+}
+.substats span{display:inline-flex;align-items:center;gap:8px}
+.substats span::before{content:"●";color:var(--gold);font-size:8px}
+.cta-pair{display:flex;gap:18px;flex-wrap:wrap}
+.btn-primary,.btn-secondary{
+  display:inline-flex;align-items:center;gap:12px;
+  padding:18px 36px;font-weight:700;font-size:15px;
+  letter-spacing:.05em;transition:.25s;
+  border-radius:2px;
+}
+.btn-primary{background:var(--cta);color:#fff;box-shadow:0 4px 24px rgba(200,16,46,.35)}
+.btn-primary:hover{background:var(--cta-2);transform:translateY(-2px);box-shadow:0 8px 32px rgba(200,16,46,.45)}
+.btn-secondary{background:transparent;color:var(--paper);border:1.5px solid var(--gold)}
+.btn-secondary:hover{background:var(--gold);color:var(--ink);transform:translateY(-2px)}
+.btn-primary::after,.btn-secondary::after{content:"→";font-size:18px;transition:.25s}
+.btn-primary:hover::after,.btn-secondary:hover::after{transform:translateX(4px)}
+
+/* ===== Pain Strip ===== */
+.pain-strip{
+  background:var(--ink);color:var(--paper);
+  padding:64px 0;border-top:2px solid var(--gold);
+}
+.pain-strip h2{
+  font-family:"Noto Serif JP",serif;font-weight:700;
+  font-size:clamp(22px,2.6vw,32px);margin-bottom:36px;text-align:center;
+}
+.pain-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.pain-item{
+  display:flex;gap:14px;padding:18px 20px;
+  background:rgba(248,245,238,.05);border-left:3px solid var(--cta);
+  font-size:14px;line-height:1.6;
+}
+.pain-item::before{
+  content:"×";color:var(--cta);font-size:22px;font-weight:900;line-height:1;flex-shrink:0;
+}
+
+/* ===== Value Hex ===== */
+.value-hex{padding:96px 0;background:var(--paper)}
+.section-eyebrow{
+  display:inline-block;font-size:12px;font-weight:700;
+  color:var(--gold);letter-spacing:.3em;margin-bottom:14px;
+}
+.section-title{
+  font-family:"Noto Serif JP",serif;font-weight:900;
+  font-size:clamp(28px,3.6vw,42px);line-height:1.35;
+  color:var(--ink);margin-bottom:18px;
+}
+.section-lead{font-size:15px;color:var(--muted);max-width:680px;line-height:1.9;margin-bottom:48px}
+.hex-wrap{
+  display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:center;
+}
+@media(max-width:880px){.hex-wrap{grid-template-columns:1fr;gap:32px}}
+.hex-svg-wrap{display:grid;place-items:center;position:relative}
+.hex-axis{font-size:12px;font-weight:700;fill:var(--ink)}
+.hex-value{stroke:var(--gold);fill:rgba(200,160,99,.22);stroke-width:2}
+.hex-grid{stroke:var(--line);fill:none;stroke-width:1}
+.hex-points{fill:var(--gold)}
+.hex-list{display:flex;flex-direction:column;gap:14px}
+.hex-li{
+  display:grid;grid-template-columns:48px 1fr auto;gap:16px;align-items:center;
+  padding:14px 18px;background:#fff;border:1px solid var(--line);
+}
+.hex-li-icon{
+  width:48px;height:48px;display:grid;place-items:center;
+  background:var(--ink);color:var(--gold);
+  font-family:"Cormorant Garamond",serif;font-weight:700;font-size:22px;
+}
+.hex-li-title{font-weight:700;font-size:15px;color:var(--ink)}
+.hex-li-desc{font-size:12px;color:var(--muted);line-height:1.5;margin-top:2px}
+.hex-li-score{
+  font-family:"Cormorant Garamond",serif;font-weight:700;
+  font-size:28px;color:var(--gold);line-height:1;
+}
+
+/* ===== Concept (3 cards) ===== */
+.concept{padding:96px 0;background:var(--ink);color:var(--paper)}
+.concept .section-title{color:var(--paper)}
+.concept .section-lead{color:#C9C3B0}
+.cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+@media(max-width:880px){.cards-3{grid-template-columns:1fr}}
+.concept-card{
+  background:rgba(248,245,238,.04);
+  border:1px solid rgba(200,160,99,.25);
+  padding:0 0 32px;
+  transition:.3s;
+  overflow:hidden;
+}
+.concept-card:hover{
+  border-color:var(--gold);transform:translateY(-4px);
+  background:rgba(248,245,238,.08);
+}
+.concept-card-img{
+  width:100%;aspect-ratio:1/1;overflow:hidden;
+  background:var(--ink-2);
+}
+.concept-card-img picture,.concept-card-img img{
+  width:100%;height:100%;object-fit:cover;
+  transition:.5s;
+}
+.concept-card:hover .concept-card-img img{transform:scale(1.06)}
+.concept-card-body{padding:28px 28px 0}
+.concept-card-num{
+  font-family:"Cormorant Garamond",serif;font-weight:700;
+  font-size:46px;color:var(--gold);line-height:1;margin-bottom:14px;
+}
+.concept-card-num::before{content:"0"}
+.concept-card-title{
+  font-family:"Noto Serif JP",serif;font-weight:700;
+  font-size:21px;color:var(--paper);margin-bottom:14px;line-height:1.45;
+}
+.concept-card-desc{font-size:14px;line-height:1.85;color:#C9C3B0}
+.concept-card-badge{
+  display:inline-block;font-size:11px;font-weight:700;letter-spacing:.15em;
+  padding:5px 10px;background:var(--gold);color:var(--ink);margin-top:18px;
+}
+
+/* ===== Audience Grid (受講対象 6 carousels) ===== */
+.audience{padding:96px 0;background:var(--paper-2)}
+.audience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:880px){.audience-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.audience-grid{grid-template-columns:1fr}}
+.aud-card{
+  background:#fff;border:1px solid var(--line);
+  padding:24px;display:flex;flex-direction:column;gap:10px;
+  transition:.25s;
+}
+.aud-card:hover{border-color:var(--gold);box-shadow:0 8px 30px rgba(11,31,58,.08);transform:translateY(-2px)}
+.aud-icon{
+  width:44px;height:44px;display:grid;place-items:center;
+  background:var(--ink);color:var(--gold);
+  font-family:"Cormorant Garamond",serif;font-weight:700;font-size:18px;
+  margin-bottom:6px;
+}
+.aud-title{font-weight:700;font-size:16px;color:var(--ink)}
+.aud-desc{font-size:13px;line-height:1.7;color:var(--muted)}
+.aud-meta{font-size:11px;color:var(--gold);font-weight:700;letter-spacing:.15em;margin-top:6px}
+
+/* ===== How To 3-Step ===== */
+.howto{padding:96px 0;background:#fff}
+.step-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative}
+@media(max-width:880px){.step-grid{grid-template-columns:1fr}}
+.step-card{
+  position:relative;padding:36px 28px;
+  background:var(--paper);border-top:3px solid var(--gold);
+}
+.step-num{
+  position:absolute;top:-22px;left:28px;
+  width:44px;height:44px;background:var(--ink);color:var(--gold);
+  display:grid;place-items:center;
+  font-family:"Cormorant Garamond",serif;font-weight:700;font-size:18px;
+}
+.step-time{
+  display:inline-block;font-size:11px;font-weight:700;
+  color:var(--green);background:rgba(31,58,46,.1);
+  padding:4px 10px;letter-spacing:.1em;margin-bottom:12px;
+}
+.step-title{font-family:"Noto Serif JP",serif;font-weight:700;font-size:19px;margin-bottom:12px;color:var(--ink)}
+.step-desc{font-size:14px;line-height:1.85;color:var(--muted)}
+
+/* ===== Proven Quality ===== */
+.proven{padding:96px 0;background:var(--green);color:var(--paper)}
+.proven .section-eyebrow{color:var(--gold-2)}
+.proven .section-title{color:var(--paper)}
+.proven-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:48px}
+@media(max-width:880px){.proven-stats{grid-template-columns:repeat(2,1fr)}}
+.proven-stat{text-align:center;padding:32px 18px;border:1px solid rgba(248,245,238,.18)}
+.proven-stat-num{
+  font-family:"Cormorant Garamond",serif;font-weight:700;
+  font-size:clamp(42px,5vw,64px);color:var(--gold);line-height:1;
+}
+.proven-stat-unit{font-size:14px;color:var(--paper);font-weight:700;margin-left:4px}
+.proven-stat-label{font-size:13px;color:#C9C3B0;margin-top:10px;letter-spacing:.05em}
+
+/* ===== Why-Chosen (Voice代替) ===== */
+.why{padding:96px 0;background:var(--paper)}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+@media(max-width:880px){.why-grid{grid-template-columns:1fr}}
+.why-card{
+  background:#fff;border:1px solid var(--line);
+  padding:32px;display:flex;flex-direction:column;gap:14px;
+  transition:.25s;
+}
+.why-card:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 8px 30px rgba(11,31,58,.08)}
+.why-tag{
+  display:inline-block;align-self:flex-start;
+  font-size:11px;font-weight:700;letter-spacing:.15em;
+  color:var(--gold);border:1px solid var(--gold);padding:4px 10px;
+}
+.why-title{font-family:"Noto Serif JP",serif;font-weight:700;font-size:19px;color:var(--ink);line-height:1.5}
+.why-body{font-size:14px;line-height:1.9;color:var(--muted)}
+
+/* ===== FAQ ===== */
+.faq{padding:96px 0;background:#fff}
+.faq-list{max-width:840px;margin:48px auto 0}
+details.faq-item{
+  border-bottom:1px solid var(--line);padding:24px 0;
+}
+details.faq-item summary{
+  display:flex;align-items:flex-start;gap:18px;cursor:pointer;
+  list-style:none;font-weight:700;font-size:16px;color:var(--ink);
+  padding-right:36px;position:relative;line-height:1.6;
+}
+details.faq-item summary::-webkit-details-marker{display:none}
+details.faq-item summary::before{
+  content:"Q";font-family:"Cormorant Garamond",serif;font-weight:700;
+  color:var(--gold);font-size:24px;line-height:1;flex-shrink:0;
+}
+details.faq-item summary::after{
+  content:"+";position:absolute;right:0;top:0;
+  font-size:24px;color:var(--gold);line-height:1;transition:.25s;
+}
+details.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-answer{
+  display:flex;gap:18px;padding:18px 0 0 0;
+  font-size:14px;line-height:1.9;color:var(--muted);
+}
+.faq-answer::before{
+  content:"A";font-family:"Cormorant Garamond",serif;font-weight:700;
+  color:var(--green);font-size:24px;line-height:1;flex-shrink:0;
+}
+
+/* ===== Campaign Strip ===== */
+.campaign{
+  background:linear-gradient(95deg,var(--green) 0%,var(--green-2) 100%);
+  padding:48px 0;color:var(--paper);
+}
+.campaign .container{
+  display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;
+}
+@media(max-width:880px){.campaign .container{grid-template-columns:1fr;text-align:center}}
+.campaign-eyebrow{font-size:12px;font-weight:700;letter-spacing:.3em;color:var(--gold-2);margin-bottom:8px}
+.campaign-title{font-family:"Noto Serif JP",serif;font-weight:700;font-size:clamp(20px,2.4vw,28px)}
+.campaign-title em{color:var(--gold);font-style:normal}
+
+/* ===== Final CTA ===== */
+.final-cta{
+  position:relative;padding:140px 0;color:var(--paper);
+  isolation:isolate;overflow:hidden;
+}
+.final-cta-bg{
+  position:absolute;inset:0;z-index:-2;
+  background-image:url('./images/comix-academy/final_cta.png');
+  background-image:image-set(
+    url('./images/comix-academy/final_cta.avif') type('image/avif'),
+    url('./images/comix-academy/final_cta.webp') type('image/webp'),
+    url('./images/comix-academy/final_cta.png')  type('image/png')
+  );
+  background-size:cover;background-position:center;
+}
+.final-cta::before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(115deg,rgba(11,31,58,.92),rgba(31,58,46,.85));
+}
+.final-cta-inner{max-width:880px;margin:0 auto;text-align:center}
+.final-cta h2{
+  font-family:"Noto Serif JP",serif;font-weight:900;
+  font-size:clamp(28px,4.5vw,56px);line-height:1.35;margin-bottom:24px;
+}
+.final-cta h2 .accent{color:var(--gold)}
+.final-cta p{font-size:16px;line-height:1.9;color:#D9D2C2;margin-bottom:40px}
+.guarantee{
+  display:flex;justify-content:center;gap:32px;flex-wrap:wrap;
+  margin-top:48px;padding-top:32px;border-top:1px solid rgba(200,160,99,.3);
+}
+.guarantee-item{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--gold-2);font-weight:700}
+.guarantee-item::before{content:"✓";color:var(--gold);font-size:18px}
+
+/* ===== Footer ===== */
+footer{background:var(--ink);color:#C9C3B0;padding:48px 0 96px;font-size:13px}
+.footer-grid{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:start}
+@media(max-width:880px){.footer-grid{grid-template-columns:1fr}}
+.footer-brand{font-family:"Noto Serif JP",serif;font-weight:700;font-size:18px;color:var(--paper);margin-bottom:8px}
+.footer-info{line-height:1.9}
+.footer-legal{font-size:11px;color:#75705F;margin-top:24px;padding-top:18px;border-top:1px solid rgba(248,245,238,.1)}
+
+/* ===== Sticky Bottom CTA (Mobile) ===== */
+.sticky-bottom{
+  position:fixed;bottom:0;left:0;right:0;z-index:99;
+  display:none;background:var(--ink);padding:10px 12px;
+  border-top:2px solid var(--gold);
+  gap:8px;
+}
+.sticky-bottom a{
+  flex:1;text-align:center;padding:12px 8px;
+  font-size:13px;font-weight:700;
+}
+.sticky-bottom .sb-1{background:var(--cta);color:#fff}
+.sticky-bottom .sb-2{background:transparent;border:1px solid var(--gold);color:var(--gold)}
+@media(max-width:880px){.sticky-bottom{display:flex}.final-cta{padding-bottom:180px}}
+</style>
+</head>
+<body>
+
+<!-- ===== Sticky Header ===== -->
+<header class="sticky-header">
+  <div class="container">
+    <a href="#" class="brand">
+      <div class="brand-mark">A</div>
+      <div class="brand-name">コミクスアカデミー<small>COMIX ACADEMY</small></div>
+    </a>
+    <a class="mini-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSeDfAetZVdOnd6JIHZxtkZFVnJTJ7vNsfwppmH7B6TxSDv-Aw/viewform?usp=pp_url&entry.1632650849=00010" target="_blank" rel="noopener">無料診断はこちら</a>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="hero">
+  <div class="hero-bg" role="img" aria-label="経営者が朝の窓辺で次の投資を思考する重厚なエグゼクティブオフィスシーン"></div>
+  <div class="container">
+    <span class="hero-eyebrow">FOR LEADERS WHO INVEST IN PEOPLE</span>
+    <h1>
+      <span class="line">最大のリターンは、</span>
+      <span class="line"><span class="accent">人への投資</span>だ。</span>
+    </h1>
+    <p class="hero-lead">
+      利益が出ている今だからこそ、その一部を社員の成長に再投資する。<br>
+      コミクスアカデミーは、御社専用のAI・業務スキル学習設計で、<br>
+      <strong style="color:var(--gold-2)">生産性と社員満足度を同時に高める</strong>法人向け学習サービスです。
+    </p>
+
+    <div class="spotlight">
+      <div class="spotlight-main">
+        <div class="spotlight-num">5,000</div>
+        <div class="spotlight-unit">円〜／1名・月</div>
+      </div>
+      <div class="spotlight-body">
+        <div class="spotlight-label">START FROM</div>
+        <div class="spotlight-source">※ 法人向けプラン最安／受講人数と助成金活用で自動見積</div>
+      </div>
+    </div>
+
+    <div class="substats">
+      <span>全1,100講座から優先順位付きで提案</span>
+      <span>AI専門家による実務ハンズオン付き</span>
+      <span>業務アンケート起点の御社専用カリキュラム</span>
+    </div>
+
+    <div class="cta-pair">
+      <a class="btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSeDfAetZVdOnd6JIHZxtkZFVnJTJ7vNsfwppmH7B6TxSDv-Aw/viewform?usp=pp_url&entry.1632650849=00010" target="_blank" rel="noopener">無料診断アンケートに回答する</a>
+      <a class="btn-secondary" href="https://kyozon.eeasy.jp/academy_suzuki" target="_blank" rel="noopener">30分のオンライン相談を予約</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Pain Strip ===== -->
+<section class="pain-strip">
+  <div class="container">
+    <h2>こんな経営課題、感じていませんか</h2>
+    <div class="pain-list">
+      <div class="pain-item">利益は出ているが、次の成長投資先が決まらない</div>
+      <div class="pain-item">既存研修を導入したが、現場で使われていない</div>
+      <div class="pain-item">社員のAIスキルがバラバラで、組織として活用が進まない</div>
+      <div class="pain-item">eラーニングだけでは、実務に活かせるか不安</div>
+      <div class="pain-item">助成金の活用方法がわからず、結局自己負担</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Value Hex (内包スキル図) ===== -->
+<section class="value-hex">
+  <div class="container">
+    <div class="hex-wrap">
+      <div class="hex-svg-wrap" aria-hidden="true">
+        <svg viewBox="0 0 360 360" width="100%" style="max-width:420px">
+          <!-- グリッド -->
+          <g class="hex-grid">
+            <polygon points="180,40 302,110 302,250 180,320 58,250 58,110"/>
+            <polygon points="180,80 268,130 268,230 180,280 92,230 92,130"/>
+            <polygon points="180,120 234,150 234,210 180,240 126,210 126,150"/>
+            <polygon points="180,160 200,170 200,190 180,200 160,190 160,170"/>
+            <line x1="180" y1="40" x2="180" y2="320"/>
+            <line x1="58" y1="110" x2="302" y2="250"/>
+            <line x1="302" y1="110" x2="58" y2="250"/>
+          </g>
+          <!-- スコア領域 -->
+          <polygon class="hex-value" points="180,50 295,118 290,246 180,300 70,250 65,114"/>
+          <!-- 頂点 -->
+          <g class="hex-points">
+            <circle cx="180" cy="50" r="5"/>
+            <circle cx="295" cy="118" r="5"/>
+            <circle cx="290" cy="246" r="5"/>
+            <circle cx="180" cy="300" r="5"/>
+            <circle cx="70" cy="250" r="5"/>
+            <circle cx="65" cy="114" r="5"/>
+          </g>
+          <!-- ラベル -->
+          <g class="hex-axis" text-anchor="middle">
+            <text x="180" y="28">業務適合度</text>
+            <text x="318" y="110">低コスト</text>
+            <text x="318" y="258">実践力</text>
+            <text x="180" y="344">専門家サポート</text>
+            <text x="42" y="258">カスタマイズ</text>
+            <text x="42" y="110">助成金活用</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <span class="section-eyebrow">COMIX ACADEMY VALUE INDEX</span>
+        <h2 class="section-title">6軸で「投資が止まらない」<br>学習サービスを設計しました。</h2>
+        <p class="section-lead">
+          安価なeラーニングを並べるだけでは、社員は学び続けません。コミクスアカデミーは
+          「業務直結」「低コスト」「実践」「専門家伴走」「カスタマイズ」「助成金活用」の
+          6軸を同時に満たす設計で、社員の学びを業績へとつなぎます。
+        </p>
+        <div class="hex-list">
+          <div class="hex-li">
+            <div class="hex-li-icon">A</div>
+            <div>
+              <div class="hex-li-title">業務適合度</div>
+              <div class="hex-li-desc">業務アンケートから御社の課題に即した講座だけを抽出</div>
+            </div>
+            <div class="hex-li-score">98</div>
+          </div>
+          <div class="hex-li">
+            <div class="hex-li-icon">B</div>
+            <div>
+              <div class="hex-li-title">低コスト</div>
+              <div class="hex-li-desc">月額5,000円／1名から。導入ハードルを最小化</div>
+            </div>
+            <div class="hex-li-score">95</div>
+          </div>
+          <div class="hex-li">
+            <div class="hex-li-icon">C</div>
+            <div>
+              <div class="hex-li-title">実践力</div>
+              <div class="hex-li-desc">AI専門家ハンズオンで「使える」までを担保</div>
+            </div>
+            <div class="hex-li-score">94</div>
+          </div>
+          <div class="hex-li">
+            <div class="hex-li-icon">D</div>
+            <div>
+              <div class="hex-li-title">助成金活用</div>
+              <div class="hex-li-desc">人材開発支援助成金など、活用可否診断付き</div>
+            </div>
+            <div class="hex-li-score">90</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Concept (3 cards) ===== -->
+<section class="concept">
+  <div class="container">
+    <span class="section-eyebrow">THREE REASONS</span>
+    <h2 class="section-title">コミクスアカデミーが、<br>経営者に選ばれる<span class="acc-gold">3つの理由</span>。</h2>
+    <p class="section-lead">単なるeラーニングではない、「組織のAI活用を、業績まで導く」設計。</p>
+
+    <div class="cards-3">
+      <article class="concept-card">
+        <div class="concept-card-img">
+          <picture>
+            <source srcset="./images/comix-academy/feature_1_cost.avif" type="image/avif">
+            <source srcset="./images/comix-academy/feature_1_cost.webp" type="image/webp">
+            <img src="./images/comix-academy/feature_1_cost.png" alt="" width="1024" height="1024" loading="lazy" decoding="async">
+          </picture>
+        </div>
+        <div class="concept-card-body">
+          <div class="concept-card-num">1</div>
+          <h3 class="concept-card-title">コストを抑えて、<br>全社的に始められる。</h3>
+          <p class="concept-card-desc">
+            最安1名あたり<strong style="color:var(--gold)">月額5,000円</strong>から。
+            導入時の負担を最小化し、全社員規模で取り組めます。受講人数と助成金活用の有無から、
+            自動見積もりが取得可能です。
+          </p>
+          <span class="concept-card-badge">FROM ¥5,000／月</span>
+        </div>
+      </article>
+
+      <article class="concept-card">
+        <div class="concept-card-img">
+          <picture>
+            <source srcset="./images/comix-academy/feature_2_custom.avif" type="image/avif">
+            <source srcset="./images/comix-academy/feature_2_custom.webp" type="image/webp">
+            <img src="./images/comix-academy/feature_2_custom.png" alt="" width="1024" height="1024" loading="lazy" decoding="async">
+          </picture>
+        </div>
+        <div class="concept-card-body">
+          <div class="concept-card-num">2</div>
+          <h3 class="concept-card-title">御社専用の<br>学習設計を提案。</h3>
+          <p class="concept-card-desc">
+            既製のeラーニングを並べるだけではありません。業務アンケートをもとに、
+            <strong style="color:var(--gold)">全1,100講座から御社に最適なカリキュラム</strong>を
+            受講優先順位付きでご提案します。
+          </p>
+          <span class="concept-card-badge">1,100 COURSES</span>
+        </div>
+      </article>
+
+      <article class="concept-card">
+        <div class="concept-card-img">
+          <picture>
+            <source srcset="./images/comix-academy/feature_3_handson.avif" type="image/avif">
+            <source srcset="./images/comix-academy/feature_3_handson.webp" type="image/webp">
+            <img src="./images/comix-academy/feature_3_handson.png" alt="" width="1024" height="1024" loading="lazy" decoding="async">
+          </picture>
+        </div>
+        <div class="concept-card-body">
+          <div class="concept-card-num">3</div>
+          <h3 class="concept-card-title">学んで、終わりに<br>しない。</h3>
+          <p class="concept-card-desc">
+            AIの専門家による<strong style="color:var(--gold)">ハンズオンレクチャー</strong>をご用意。
+            「eラーニングだけでは実務に活かせるか不安」という企業様も、
+            実際の業務活用までしっかりつなげられます。
+          </p>
+          <span class="concept-card-badge">HANDS-ON</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Audience (受講対象 6 type) ===== -->
+<section class="audience">
+  <div class="container">
+    <span class="section-eyebrow">FOR EVERY ROLE</span>
+    <h2 class="section-title">全職種・全レベルに、<br>最適な学びを。</h2>
+    <p class="section-lead">経営層から現場まで、役割ごとに優先すべき講座が違います。御社の組織構造に合わせて、最適な学習パスをご提案します。</p>
+
+    <div class="audience-grid">
+      <div class="aud-card">
+        <div class="aud-icon">01</div>
+        <h3 class="aud-title">経営層・経営企画</h3>
+        <p class="aud-desc">AI戦略、DX投資判断、生成AIガバナンス。意思決定者として知っておくべき視座を体系的に。</p>
+        <div class="aud-meta">EXECUTIVE TRACK</div>
+      </div>
+      <div class="aud-card">
+        <div class="aud-icon">02</div>
+        <h3 class="aud-title">営業・カスタマーサクセス</h3>
+        <p class="aud-desc">提案書作成、メール対応、商談議事録の自動化。AIで商談速度と質を同時に引き上げる。</p>
+        <div class="aud-meta">SALES TRACK</div>
+      </div>
+      <div class="aud-card">
+        <div class="aud-icon">03</div>
+        <h3 class="aud-title">マーケティング</h3>
+        <p class="aud-desc">コンテンツ生成、SEO、LP最適化、広告クリエイティブ。生成AI時代の必須スキルを網羅。</p>
+        <div class="aud-meta">MARKETING TRACK</div>
+      </div>
+      <div class="aud-card">
+        <div class="aud-icon">04</div>
+        <h3 class="aud-title">管理部門・経理</h3>
+        <p class="aud-desc">資料作成、データ集計、社内文書のAI活用。ホワイトカラーの定型業務を圧縮する。</p>
+        <div class="aud-meta">ADMIN TRACK</div>
+      </div>
+      <div class="aud-card">
+        <div class="aud-icon">05</div>
+        <h3 class="aud-title">人事・採用</h3>
+        <p class="aud-desc">求人票生成、スカウト文面、面接シナリオ。採用と育成のレバレッジを最大化。</p>
+        <div class="aud-meta">HR TRACK</div>
+      </div>
+      <div class="aud-card">
+        <div class="aud-icon">06</div>
+        <h3 class="aud-title">全社員必修</h3>
+        <p class="aud-desc">生成AI基礎、業務適用ノウハウ、情報セキュリティ。全社のAIリテラシーを底上げ。</p>
+        <div class="aud-meta">CORE TRACK</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== How To 3-Step ===== -->
+<section class="howto">
+  <div class="container">
+    <span class="section-eyebrow">HOW IT WORKS</span>
+    <h2 class="section-title">無料診断から、<br>導入までの3ステップ。</h2>
+    <p class="section-lead">最短5分のアンケート回答から、御社専用カリキュラム提案・自動見積もり取得まで。導入判断に必要な情報を、すべて無料でお届けします。</p>
+
+    <div class="step-grid" style="margin-top:64px">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <div class="step-time">所要時間 5分</div>
+        <h3 class="step-title">無料アンケートに回答</h3>
+        <p class="step-desc">業種・部署構成・現在の業務課題などをお答えください。御社のAI活用機会を構造化します。</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <div class="step-time">最短 3営業日</div>
+        <h3 class="step-title">御社専用カリキュラム＋自動見積</h3>
+        <p class="step-desc">業務適合度の高い講座を優先順位付きで提案。受講人数と助成金活用有無から、月額・年額の自動見積もメールで送付します。</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <div class="step-time">導入後 即日〜</div>
+        <h3 class="step-title">受講開始＋ハンズオン</h3>
+        <p class="step-desc">eラーニング開始と同時に、AI専門家のハンズオンレクチャーで実務適用を支援。学びを成果にまでつなげます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Proven Quality ===== -->
+<section class="proven">
+  <div class="container">
+    <span class="section-eyebrow">SERVICE FACTS</span>
+    <h2 class="section-title">数字で見る、<br>コミクスアカデミー。</h2>
+    <div class="proven-stats">
+      <div class="proven-stat">
+        <span class="proven-stat-num">1,100</span><span class="proven-stat-unit">講座</span>
+        <div class="proven-stat-label">生成AI・マーケ・DX網羅</div>
+      </div>
+      <div class="proven-stat">
+        <span class="proven-stat-num">16</span><span class="proven-stat-unit">職種</span>
+        <div class="proven-stat-label">役割別カリキュラム対応</div>
+      </div>
+      <div class="proven-stat">
+        <span class="proven-stat-num">5,000</span><span class="proven-stat-unit">円〜</span>
+        <div class="proven-stat-label">最安／1名・月</div>
+      </div>
+      <div class="proven-stat">
+        <span class="proven-stat-num">1</span><span class="proven-stat-unit">対1相談</span>
+        <div class="proven-stat-label">AI専門家伴走付き</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Why-Chosen ===== -->
+<section class="why">
+  <div class="container">
+    <span class="section-eyebrow">WHY EXECUTIVES CHOOSE</span>
+    <h2 class="section-title">経営者がこのサービスを<br>選ぶ理由。</h2>
+    <p class="section-lead">研修への投資判断は、価格ではなく「業績への接続」で決まります。コミクスアカデミーが評価されている本質的な理由を整理しました。</p>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="why-tag">REASON 01</span>
+        <h3 class="why-title">「学ぶ」ではなく<br>「業務に組み込む」設計だから。</h3>
+        <p class="why-body">アンケート起点で講座を最適化し、ハンズオンで現場適用まで伴走。受講者の業務時間に組み込まれ、学びが業績に直結する仕組みを設計しています。</p>
+      </div>
+      <div class="why-card">
+        <span class="why-tag">REASON 02</span>
+        <h3 class="why-title">助成金で<br>「実質コストを最小化」できるから。</h3>
+        <p class="why-body">人材開発支援助成金等の活用可否診断を実施。条件を満たせば、受講料の大幅な負担軽減が可能です。診断と申請サポートも標準で対応します。</p>
+      </div>
+      <div class="why-card">
+        <span class="why-tag">REASON 03</span>
+        <h3 class="why-title">「経営層から現場まで」<br>役割別に設計されているから。</h3>
+        <p class="why-body">全1,100講座が16職種別に整理済み。経営判断・営業・マーケ・管理・人事・全社員必修まで、組織のレイヤーごとに最適なパスを提示します。</p>
+      </div>
+      <div class="why-card">
+        <span class="why-tag">REASON 04</span>
+        <h3 class="why-title">「導入後の運用」まで<br>標準で含まれているから。</h3>
+        <p class="why-body">受講進捗の可視化、四半期ごとのレビューミーティング、追加講座の優先度再設定までを標準提供。「導入して終わり」にしない運用が前提です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq">
+  <div class="container">
+    <span class="section-eyebrow">FAQ</span>
+    <h2 class="section-title" style="text-align:center">よくあるご質問</h2>
+
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>本当に1名あたり月額5,000円から導入できますか？</summary>
+        <div class="faq-answer"><span>受講人数・契約期間・助成金活用の有無で変動しますが、法人プランの最安は1名あたり月額5,000円です。無料診断アンケート回答後、御社専用の見積もりを自動でお送りします。</span></div>
+      </details>
+      <details class="faq-item">
+        <summary>1,100講座から、どうやって自社に合うものを選ぶのですか？</summary>
+        <div class="faq-answer"><span>業務アンケートで御社の業種・部署構成・現在の課題を伺い、生産性インパクトの大きい講座を優先順位付きで提案します。「全1,100講座を渡して終わり」ではありません。</span></div>
+      </details>
+      <details class="faq-item">
+        <summary>eラーニングだけで現場で使えるようになりますか？</summary>
+        <div class="faq-answer"><span>「学んで終わらせない」ために、AI専門家によるハンズオンレクチャーを標準提供しています。実際の業務シーンに沿って、講師が伴走しながら実装支援します。</span></div>
+      </details>
+      <details class="faq-item">
+        <summary>助成金は本当に使えるのですか？</summary>
+        <div class="faq-answer"><span>人材開発支援助成金など、対象となる可能性のある助成金の活用可否を診断し、申請サポートまで対応します。診断結果は無料見積に含まれます。</span></div>
+      </details>
+      <details class="faq-item">
+        <summary>導入までにどれくらい時間がかかりますか？</summary>
+        <div class="faq-answer"><span>無料診断アンケート回答から、御社専用カリキュラム提案・見積取得までは最短3営業日。承諾後は即日受講開始が可能です。</span></div>
+      </details>
+      <details class="faq-item">
+        <summary>もっと詳しく話を聞きたいのですが？</summary>
+        <div class="faq-answer"><span>30分のオンライン相談を承っております。代表の鈴木がサービス概要・活用イメージをご説明しますので、お気軽にご予約ください。</span></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Campaign Strip ===== -->
+<section class="campaign">
+  <div class="container">
+    <div>
+      <div class="campaign-eyebrow">FREE DIAGNOSIS</div>
+      <div class="campaign-title">無料診断で、<em>御社専用カリキュラム＋自動見積</em>を取得</div>
+    </div>
+    <a class="btn-secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSeDfAetZVdOnd6JIHZxtkZFVnJTJ7vNsfwppmH7B6TxSDv-Aw/viewform?usp=pp_url&entry.1632650849=00010" target="_blank" rel="noopener" style="border-color:var(--gold);color:var(--gold)">5分で回答する</a>
+  </div>
+</section>
+
+<!-- ===== Final CTA ===== -->
+<section class="final-cta">
+  <div class="final-cta-bg" role="img" aria-label="モダンなオフィスで社員がAIツールを活用しながら成果を共有しているシーン"></div>
+  <div class="container">
+    <div class="final-cta-inner">
+      <h2>利益を、<span class="accent">人への投資</span>へ。<br>その一歩を、いま。</h2>
+      <p>
+        利益が出ている今だからこそ、社員のAI活用力に再投資する。<br>
+        生産性と社員満足度を同時に高める設計を、まずは無料診断でご確認ください。
+      </p>
+      <div class="cta-pair" style="justify-content:center">
+        <a class="btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSeDfAetZVdOnd6JIHZxtkZFVnJTJ7vNsfwppmH7B6TxSDv-Aw/viewform?usp=pp_url&entry.1632650849=00010" target="_blank" rel="noopener">無料診断アンケートに回答する</a>
+        <a class="btn-secondary" href="https://kyozon.eeasy.jp/academy_suzuki" target="_blank" rel="noopener">30分のオンライン相談を予約</a>
+      </div>
+      <div class="guarantee">
+        <div class="guarantee-item">無料で見積取得</div>
+        <div class="guarantee-item">御社専用カリキュラム提案</div>
+        <div class="guarantee-item">助成金活用診断付き</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">コミクスアカデミー｜COMIX ACADEMY</div>
+        <div class="footer-info">
+          法人向けAI・業務スキル学習サービス｜全1,100講座・16職種対応<br>
+          運営：株式会社コミクス　代表取締役　鈴木章裕<br>
+          お問い合わせ：<a href="https://kyozon.eeasy.jp/academy_suzuki" style="color:var(--gold-2)" target="_blank" rel="noopener">オンライン相談予約</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-weight:700;color:var(--paper);margin-bottom:8px">QUICK LINKS</div>
+        <div class="footer-info">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeDfAetZVdOnd6JIHZxtkZFVnJTJ7vNsfwppmH7B6TxSDv-Aw/viewform?usp=pp_url&entry.1632650849=00010" target="_blank" rel="noopener">無料診断アンケート</a><br>
+          <a href="https://kyozon.eeasy.jp/academy_suzuki" target="_blank" rel="noopener">30分商談予約</a><br>
+          <a href="https://www.comix.co.jp/academy/" target="_blank" rel="noopener">サービス公式サイト</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-legal">© COMIX Inc. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- ===== Sticky Bottom CTA (Mobile) ===== -->
+<nav class="sticky-bottom" aria-label="モバイル下部CTA">
+  <a class="sb-1" href="https://docs.google.com/forms/d/e/1FAIpQLSeDfAetZVdOnd6JIHZxtkZFVnJTJ7vNsfwppmH7B6TxSDv-Aw/viewform?usp=pp_url&entry.1632650849=00010" target="_blank" rel="noopener">無料診断</a>
+  <a class="sb-2" href="https://kyozon.eeasy.jp/academy_suzuki" target="_blank" rel="noopener">商談予約</a>
+</nav>
+
+</body>
+</html>
